@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Controle de Estoque</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Controle de Estoque</h1>
+        <nav>
+            <a href="{{ url_for('index') }}">Início</a>
+            <a href="{{ url_for('produtos.cadastrar_produto') }}">Cadastrar Produto</a>
+            <a href="{{ url_for('movimentar') }}">Movimentar Estoque</a>
+            <a href="{{ url_for('produtos.visualizar_estoque') }}">Visualizar Estoque</a>
+            <a href="{{ url_for('relatorio') }}">Relatórios</a>
+        </nav>
+        <hr>
+    </header>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer>
+        <hr>
+        <p>Desenvolvido por Michel Lucas © 2025</p>
+    </footer>
+</body>
+</html>

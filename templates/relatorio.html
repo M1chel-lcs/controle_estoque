@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Relatório de Estoque</h2>
+
+<table border="1">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Produto</th>
+            <th>Categoria</th>
+            <th>Preço</th>
+            <th>Estoque Atual</th>
+            <th>Total Vendido</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for produto in relatorio %}
+        <tr>
+            <td>{{ produto.id }}</td>
+            <td>{{ produto.nome }}</td>
+            <td>{{ produto.categoria }}</td>
+            <td>R$ {{ produto.preco }}</td>
+            <td>{{ produto.quantidade_atual }}</td>
+            <td>{{ produto.total_vendido or 0 }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
